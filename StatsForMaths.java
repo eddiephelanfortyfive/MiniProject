@@ -1,4 +1,4 @@
-package EPIC;
+package MiniProject;
 
 import java.io.*;
 /*import java.io.FileWriter;

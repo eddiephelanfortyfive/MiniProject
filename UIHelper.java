@@ -1,4 +1,4 @@
-package EPIC;
+package MiniProject;
 
 
 public class UIHelper {

@@ -1,4 +1,4 @@
-package EPIC;
+package MiniProject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,16 +42,12 @@ public class MainQuiz {
 		}
 		
 		//Start questions
-		// Get scores from Round 1
-		//comments contained in NoviceQuestionBank apply to all question banks.
-		NoviceQuestionBank Score1 = new NoviceQuestionBank(score);
-		score = Score1.RoundOneScore();
-		// Get scores from Round 3
-		IntermediateQuestionBank Score2 = new IntermediateQuestionBank(score);
-		score = Score2.RoundTwoScore();
-		// Get scores from Round 3
-		ExpertQuestionBank Score3 = new ExpertQuestionBank(score);
-		score = Score3.RoundThreeScore();
+		
+				
+		QuestionBank newdifficulty = new QuestionBank();
+		score=newdifficulty.Novice(score);
+		score=newdifficulty.Intermediate(score);
+		score=newdifficulty.Expert(score);
 		
 		System.out.println("Your final score is: " + score);
 		System.out.print("Your score history:");//printing users score	
