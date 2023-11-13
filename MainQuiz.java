@@ -20,14 +20,16 @@ public class MainQuiz {
 		/*Calling the login class and initializing the variable username1 and assigning it
 		 * to the output of the method user-name in the class logintoquiz*/
 		
-		
-		System.out.println("Are you ready to begin?: Y/N");
+		BeginQuiz newBegin = new BeginQuiz();
+		newBegin.BeginQuiz();
+		//System.out.println("Are you ready to begin?: Y/N");
 		/*asking the player if they would like to begin the game*/
 		
-		Scanner scanner = new Scanner(System.in);
+		
+		/*Scanner scanner = new Scanner(System.in);
 		String begin = scanner.nextLine();
 		
-		begin = begin.toLowerCase();
+		
 		
 		// Check if begin is y, if not, exit the quiz, or else return an error
 		if (begin.equals("y")) {
@@ -39,7 +41,7 @@ public class MainQuiz {
 				} else {
 					System.out.println("Invalid input");
 					System.exit(0);
-		}
+		}*/
 		
 		//Start questions
 		
@@ -49,9 +51,8 @@ public class MainQuiz {
 		score=newdifficulty.Intermediate(score);
 		score=newdifficulty.Expert(score);
 		
-		System.out.println("Your final score is: " + score);
-		System.out.print("Your score history:");//printing users score	
-		
+		//printing users score	
+		UIHelper.printScore(score);
 		// Write the scores to the c.s.v. file
 		TextWriter scoreWriter = new TextWriter(username1, score);
 		/*
@@ -59,41 +60,8 @@ public class MainQuiz {
 		 * compares your stat's to all other quiz's ever played
 		 * Displays statistics
 		 */
-		StatsForMaths getStats = new StatsForMaths();
+		UIHelper.printStats(username1);
 		
-		ArrayList<Double> allPlayers = getStats.getStats();
-		ArrayList<Double> currentPlayer = getStats.getPlayerStats(username1);
-		ArrayList<String> comparisons = getStats.compareStats(currentPlayer, allPlayers);
-
-		//This prints the statistics 
-		System.out.printf(""
-				+ "---------------------------------\n"
-				+ "Your mean is %.2f\n" 
-				+ "Your median is %.2f\n" 
-				+ "Your standard deviation is %.2f\n"
-				+ "---------------------------------\n"
-				+ "\n"
-				+ "---------------------------------------\n" 
-                + "The global mean is %.2f\n" 
-                + "The global median is %.2f\n" 
-                + "The global standard deviation is %.2f\n"
-                + "---------------------------------------\n"
-                + "\n"
-                + "----------------------------------------------------------------------\n" 
-                + "Your mean is %s the global mean.\n" 
-                + "Your median is %s the global median.\n" 
-                + "Your standard deviation is %s the global standard deviation.\n"
-                + "----------------------------------------------------------------------\n"
-                + "\n"
-                + "========================================\n" 
-                + "Thanks for playing! See you next time!!!\n"
-                + "========================================\n",
-                currentPlayer.get(0), currentPlayer.get(1), currentPlayer.get(2),
-                allPlayers.get(0), allPlayers.get(1), allPlayers.get(2),
-                comparisons.get(0), comparisons.get(1), comparisons.get(2));
-
-		
-		scanner.close();
 	}
 
 }
