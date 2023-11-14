@@ -14,11 +14,12 @@ public class LoginToQuiz {
 	private String username;
 	
     public String LoginToQuiz() {
+    	UIHelper newUI = new UIHelper();
     	
         Scanner scanner = new Scanner(System.in);
         
         // Prompt the player to enter name
-        System.out.println("Please enter your username: ");
+        newUI.typingText("Please enter your username: \n", 10);
         String username = scanner.nextLine();
        
         
@@ -57,10 +58,10 @@ public class LoginToQuiz {
         	
      
         	if (playerNames.contains(username)) {
-            	System.out.printf("Welcome Back %s you have logged in.\n",username);
+        		newUI.typingText("Welcome Back "+username+" you have logged in.\n",10);
         	}
     			else {
-                    System.out.printf("Welcome %s you have created a new account.\n",username);
+    				newUI.typingText("Welcome "+username+" you have created a new account.\n",10);
     			}
         	
             // Add the username to PlayerNames array

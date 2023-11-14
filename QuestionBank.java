@@ -4,6 +4,7 @@ public class QuestionBank {
 	public int Novice(int score) {
 		RandomiseQuestions newRandom = new RandomiseQuestions();
 		String difficulty = "NOVICE";
+		String level = "ONE";
 		String[] Q1 = { "Descrete Mathmatics", "Which of the following represents the intersection of two sets A and B",
 				"A - B", "A ∪ B", "A ∩ B", "A × B", "c" };
 		String[] Q2 = { "Descrete Mathmatics", "What is the result of the following expression?\n(A AND B) OR (NOT C)",
@@ -19,13 +20,14 @@ public class QuestionBank {
 		String[] Q6 = { "Computer Organisation",
 				"What is the term for a high-level programming language that is easy to read and write, often used for teaching programming concepts?",
 				"Assembly language", "Machine code", "Python", "Binary code", "c" };
-		score = newRandom.pick2Questions(score, difficulty, Q1, Q2, Q3, Q4, Q5, Q6);
+		score = newRandom.pick2Questions(score, level, difficulty, Q1, Q2, Q3, Q4, Q5, Q6);
 		return score;
 	}
 
 	public int Intermediate(int score) {
 		RandomiseQuestions newRandom = new RandomiseQuestions();
 		String difficulty = "INTERMEDIATE";
+		String level = "TWO";
 		String[] Q1 = { "Descrete Mathmatics", "What are the domain and codomain of a function?",
 				"The domain is the set of all possible inputs, and the codomain is the set of all possible outputs",
 				"The domain is the set of all possible outputs, and the codomain is the set of all possible inputs",
@@ -49,13 +51,14 @@ public class QuestionBank {
 		String[] Q6 = { "Computer Organisation", "What is the purpose of the Arithmetic Logic Unit (ALU) in a CPU?",
 				"To perform arithmetic and logical operations", "To store program instructions",
 				"To manage memory allocation", "To control input/output devices", "a" };
-		score = newRandom.pick2Questions(score, difficulty, Q1, Q2, Q3, Q4, Q5, Q6);
+		score = newRandom.pick2Questions(score, level,difficulty, Q1, Q2, Q3, Q4, Q5, Q6);
 		return score;
 	}
 
 	public int Expert(int score) {
 		RandomiseQuestions newRandom = new RandomiseQuestions();
 		String difficulty = "EXPERT";
+		String level = "THREE";
 		String[] Q1 = { "Descrete Mathmatics",
 				"Which of the following is a property of an equivalence relation in set theory?", "Reflexivity",
 				"Injectivity", "Linearity", "Partiality", "a" };
@@ -84,7 +87,7 @@ public class QuestionBank {
 				"Is a hardware flaw that affects the CPU's ability to execute complex instructions.",
 				"Is a software limitation that restricts the types of programs that can run on a computer.",
 				"Is a security vulnerability that allows unauthorized access to a computer's memory.", "b" };
-		score = newRandom.pick2Questions(score, difficulty, Q1, Q2, Q3, Q4, Q5, Q6);
+		score = newRandom.pick2Questions(score, level,difficulty, Q1, Q2, Q3, Q4, Q5, Q6);
 		return score;
 	}
 }
