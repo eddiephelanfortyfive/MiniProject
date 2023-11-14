@@ -3,9 +3,9 @@ package MiniProject;
 import java.util.ArrayList;
 
 public class UIHelper {
-	private String line = "------------------------------------------------------------------------------------------\n";
-	private String doubleLine="==========================================================================================\n";
-	private String goodbye="\n             Thanks for playing! See you next time!!!\n\n";
+	private String line = "---------------------------------------------------------------------------------------------------------\n";
+	private String doubleLine="=========================================================================================================\n";
+	private String goodbye="\n                    Thanks for playing! See you next time!!!\n\n";
 
 public void welcome() {
 	
@@ -57,19 +57,19 @@ public void printStats(String username1) {
 	//This prints the statistics 
 	
 	typingText(line,7);
-	System.out.printf("                                   Your mean is %.2f\n"
-			+ "                                  Your median is %.2f\n"
-			+ "                            Your standard deviation is %.2f\n",currentPlayer.get(0), currentPlayer.get(1), currentPlayer.get(2));
+	System.out.printf("                                          Your mean is %.2f\n"
+			+ "                                         Your median is %.2f\n"
+			+ "                                   Your standard deviation is %.2f\n",currentPlayer.get(0), currentPlayer.get(1), currentPlayer.get(2));
 	typingText(line,7);
-	System.out.printf("                                The global mean is %.2f\n"
-			+ "                               The global median is %.2f\n"
-			+ "                          The global standard deviation is %.2f\n",allPlayers.get(0), allPlayers.get(1), allPlayers.get(2));
+	System.out.printf("                                       The global mean is %.2f\n"
+			+ "                                      The global median is %.2f\n"
+			+ "                                 The global standard deviation is %.2f\n",allPlayers.get(0), allPlayers.get(1), allPlayers.get(2));
 	typingText(line,7);
-	System.out.printf("                          Your mean is %s the global mean.\n"
-			+ "                        Your median is %s the global median.\n"
-			+ "            Your standard deviation is %s the global standard deviation.\n\n", comparisons.get(0), comparisons.get(1), comparisons.get(2));
+	System.out.printf("                                 Your mean is %s the global mean.\n"
+			+ "                               Your median is %s the global median.\n"
+			+ "                   Your standard deviation is %s the global standard deviation.\n\n", comparisons.get(0), comparisons.get(1), comparisons.get(2));
 	typingText(doubleLine,10);
-    typingText("\n                       Thanks for playing! See you next time!!!\n\n",10);
+    typingText("\n                              Thanks for playing! See you next time!!!\n\n",10);
     typingText(doubleLine,10);
             
 

@@ -50,11 +50,11 @@ public class RandomiseQuestions {
 		int count4=0;
 		int count5=0;
 		int maximum = 5;
-		String roundNum="------------------------------------------------------------------------------------------\n" 
-					  + "                                   ROUND "+level+" LEVEL: "+difficulty+"\n" 
-					  + "------------------------------------------------------------------------------------------\n";
+		String roundNum="---------------------------------------------------------------------------------------------------------\n" 
+					  + "                                          ROUND "+level+" LEVEL: "+difficulty+"\n" 
+					  + "---------------------------------------------------------------------------------------------------------\n";
 		UIHelper newRound = new UIHelper(); 
-		newRound.typingText(roundNum, 10);
+		newRound.typingText(roundNum, 7);
 		
 		for (int i = 1; i <= 2; i++) {
 			

@@ -14,13 +14,11 @@ public class MainQuiz {
 		
 		BeginQuiz newBegin = new BeginQuiz();
 		newBegin.BeginQuiz();
-		
-				
+			
 		QuestionBank newdifficulty = new QuestionBank();
 		score=newdifficulty.Novice(score);
 		score=newdifficulty.Intermediate(score);
 		score=newdifficulty.Expert(score);
-		
 			
 		UIHelper.printScore(score);
 		TextWriter scoreWriter = new TextWriter(username1, score);
