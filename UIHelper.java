@@ -50,12 +50,13 @@ public void typingText(String text, int sleepTime) {
 public void printStats(String username1) {
 	StatsForMaths getStats = new StatsForMaths();
 	
-	ArrayList<Double> allPlayers = getStats.getStats();
 	ArrayList<Double> currentPlayer = getStats.getPlayerStats(username1);
+	ArrayList<Double> allPlayers = getStats.getPlayerStats("all");
 	ArrayList<String> comparisons = getStats.compareStats(currentPlayer, allPlayers);
+	
 
 	//This prints the statistics 
-	
+	//System.out.println(Arrays.toString(pointsArray));
 	typingText(line,7);
 	System.out.printf("                                          Your mean is %.2f\n"
 			+ "                                         Your median is %.2f\n"
@@ -78,7 +79,6 @@ public void printStats(String username1) {
 public void printScore(int score) {
 	typingText(line,5);
 	System.out.println("Your final score is: " + score);
-	System.out.print("Your score history:");
 	
 }
 }
