@@ -22,8 +22,9 @@ public class CreateQuestions {
 			input = input.toLowerCase();
 			if(input.equals("a")||input.equals("b")||input.equals("c")||input.equals("d")) {
 			if (input.equals(answerForQ)) {
+				newUI.typingText("--Correct--\n\n", 5);
 				score++;
-			}
+			}else {newUI.typingText("--Incorrect--\n\n", 5);}
 			}else {newUI.typingText("Invalid input please try again.\n"
 					+ "Enter answer:\n", 10);
 			i--;}
