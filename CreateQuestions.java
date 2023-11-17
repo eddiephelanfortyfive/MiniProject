@@ -10,11 +10,11 @@ public class CreateQuestions {
 		String questionnew ="CATEGORY: "+category+" \n"
 				+ ""+question+"\n"
 				+ "\n"
-				+ "A. "+A+"\n"
-				+ "B. "+B+"\n"
-				+ "C. "+C+"\n"
-				+ "D. "+D+"\n"
-				+ "Enter answer:\n";
+				+ "	A. "+A+"\n"
+				+ "	B. "+B+"\n"
+				+ "	C. "+C+"\n"
+				+ "	D. "+D+"\n"
+				+ "\nEnter answer:\n";
 		newUI.typingText(questionnew, 5);
 		for (int i=0; i<1; i++) {
 			Scanner answer = new Scanner(System.in);

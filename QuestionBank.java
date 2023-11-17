@@ -51,7 +51,7 @@ public class QuestionBank {
 		String[] Q6 = { "Computer Organisation", "What is the purpose of the Arithmetic Logic Unit (ALU) in a CPU?",
 				"To perform arithmetic and logical operations", "To store program instructions",
 				"To manage memory allocation", "To control input/output devices", "a" };
-		score = newRandom.pick2Questions(score, level,difficulty, Q1, Q2, Q3, Q4, Q5, Q6);
+		score = newRandom.pick2Questions(score, level, difficulty, Q1, Q2, Q3, Q4, Q5, Q6);
 		return score;
 	}
 
@@ -87,7 +87,7 @@ public class QuestionBank {
 				"Is a hardware flaw that affects the CPU's ability to execute complex instructions.",
 				"Is a software limitation that restricts the types of programs that can run on a computer.",
 				"Is a security vulnerability that allows unauthorized access to a computer's memory.", "b" };
-		score = newRandom.pick2Questions(score, level,difficulty, Q1, Q2, Q3, Q4, Q5, Q6);
+		score = newRandom.pick2Questions(score, level, difficulty, Q1, Q2, Q3, Q4, Q5, Q6);
 		return score;
 	}
 }
