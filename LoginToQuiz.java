@@ -1,20 +1,13 @@
 package MiniProject;
 
 import java.io.File;
-import java.io.FileWriter;
-//import java.io.FileWriter;
-//import java.io.FileReader;
-//import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class LoginToQuiz {
 
-	private String username;
-
-	public String LoginToQuiz() {
+	public String LoginToTheQuiz() {
 		UIHelper newUI = new UIHelper();
 
 		Scanner scanner = new Scanner(System.in);
@@ -58,7 +51,6 @@ public class LoginToQuiz {
 			e.printStackTrace();
 		}
 
-		this.username = username;
 
 		return username;
 	}

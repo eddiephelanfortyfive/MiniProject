@@ -76,7 +76,7 @@ public class UIHelper {
 						+ "                   Your standard deviation is %s the global standard deviation.\n\n",
 				comparisons.get(0), comparisons.get(1), comparisons.get(2));
 		typingText(doubleLine, 10);
-		typingText("\n                              Thanks for playing! See you next time!!!\n\n", 10);
+		typingText(goodbye, 10);
 		typingText(doubleLine, 10);
 
 	}

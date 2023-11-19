@@ -8,17 +8,16 @@ public class MainQuiz {
 		UIHelper.welcome();
 
 		LoginToQuiz username = new LoginToQuiz();
-		String username1 = username.LoginToQuiz();
+		String username1 = username.LoginToTheQuiz();
 
 		BeginQuiz newBegin = new BeginQuiz();
-		newBegin.BeginQuiz();
+		newBegin.BeginTheQuiz();
 
 		QuestionBank newdifficulty = new QuestionBank();
 		score = newdifficulty.Novice(score);
 		score = newdifficulty.Intermediate(score);
 		score = newdifficulty.Expert(score);
 
-		TextWriter scoreWriter = new TextWriter(username1, score);
 		UIHelper.printScore(score);
 		UIHelper.printStats(username1);
 

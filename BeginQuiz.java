@@ -3,7 +3,7 @@ package MiniProject;
 import java.util.Scanner;
 
 public class BeginQuiz {
-	public void BeginQuiz() {
+	public void BeginTheQuiz() {
 		UIHelper newUI = new UIHelper();
 		newUI.typingText("Are you ready to begin?: Y/N\n", 5);
 		Scanner scanner = new Scanner(System.in);
