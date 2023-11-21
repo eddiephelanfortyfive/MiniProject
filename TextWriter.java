@@ -10,7 +10,6 @@ public class TextWriter {
 
 	public TextWriter(String username, int score) {
 
-
 		try {
 
 			writer = new BufferedWriter(new FileWriter("results.csv", true));
