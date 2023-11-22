@@ -2,6 +2,7 @@ package MiniProject;
 
 import java.util.ArrayList;
 
+
 public class UIHelper {
 	private String line = "---------------------------------------------------------------------------------------------------------\n";
 	private String doubleLine = "=========================================================================================================\n";
@@ -50,7 +51,8 @@ public class UIHelper {
 		}
 	}
 
-	public void printStats(String username1) {
+	public void printStats(String username1,int score) {
+		TextWriter scoreWriter = new TextWriter(username1, score);
 		StatsForMaths getStats = new StatsForMaths();
 
 		ArrayList<Double> currentPlayer = getStats.getPlayerStats(username1);

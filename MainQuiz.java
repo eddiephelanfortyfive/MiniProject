@@ -17,7 +17,7 @@ public class MainQuiz {
 		score =newQ.printQuestions(0);
 
 		UIHelper.printScore(score);
-		UIHelper.printStats(username1);
+		UIHelper.printStats(username1,score);
 
 	}
 
