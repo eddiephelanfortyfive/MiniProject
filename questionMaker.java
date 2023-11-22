@@ -26,14 +26,8 @@ public class questionMaker {
 
 	public int makeQuestion(int score) {
 		UIHelper newUI = new UIHelper();
-		String questionnew = "CATEGORY: " + category 
-				+ " \n" 
-				+ "" + question + "\n" + "\n" 
-				+ "	A. " + optiona + "\n"
-				+ "	B. " + optionb + "\n" 
-				+ "	C. " + optionc + "\n" 
-				+ "	D. " + optiond + "\n" 
-				+ "\nEnter answer:\n";
+		String questionnew = "CATEGORY: " + category + " \n" + "" + question + "\n" + "\n" + "	A. " + optiona + "\n"
+				+ "	B. " + optionb + "\n" + "	C. " + optionc + "\n" + "	D. " + optiond + "\n" + "\nEnter answer:\n";
 		newUI.typingText(questionnew, 5);
 		for (int i = 0; i < 1; i++) {
 			Scanner answer = new Scanner(System.in);

@@ -8,7 +8,7 @@ public class TextWriter {
 
 	private BufferedWriter writer;
 
-	public TextWriter(String username, int score) {
+	public void WriteScore(String username, int score) {
 
 		try {
 

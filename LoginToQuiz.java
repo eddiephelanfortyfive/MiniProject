@@ -51,7 +51,6 @@ public class LoginToQuiz {
 			e.printStackTrace();
 		}
 
-
 		return username;
 	}
 

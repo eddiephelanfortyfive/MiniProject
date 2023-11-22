@@ -14,7 +14,7 @@ public class MainQuiz {
 		newBegin.BeginTheQuiz();
 
 		RandomQuestions newQ = new RandomQuestions();
-		score =newQ.printQuestions(0);
+		score =newQ.printQuestions(score,"NOVICE","INTERMEDIATE","EXPERT");
 
 		UIHelper.printScore(score);
 		UIHelper.printStats(username1,score);

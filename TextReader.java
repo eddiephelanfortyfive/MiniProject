@@ -32,7 +32,7 @@ public class TextReader {
 		}
 		return playerHistory;
 	}
-	
+
 	public ArrayList<Question> readQuestions() {
 		BufferedReader reader;
 		ArrayList<Question> Questions = new ArrayList<Question>();
@@ -45,9 +45,7 @@ public class TextReader {
 			while ((line = reader.readLine()) != null) {
 				String[] values = line.split(",");
 
-				Questions.add(new Question(values[0], 
-						values[1], values[2], values[3], 
-						values[4], values[5], values[6],
+				Questions.add(new Question(values[0], values[1], values[2], values[3], values[4], values[5], values[6],
 						values[7]));
 			}
 			reader.close();
