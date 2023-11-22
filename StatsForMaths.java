@@ -8,7 +8,7 @@ public class StatsForMaths {
 
 		TextReader csvFileRead = new TextReader();
 
-		ArrayList<String> listOfAllQuizEntries = csvFileRead.readCSVFile();
+		ArrayList<String> listOfAllQuizEntries = csvFileRead.readResults();
 
 		ArrayList<Double> points = new ArrayList<Double>();
 

@@ -13,10 +13,8 @@ public class MainQuiz {
 		BeginQuiz newBegin = new BeginQuiz();
 		newBegin.BeginTheQuiz();
 
-		QuestionBank newdifficulty = new QuestionBank();
-		score = newdifficulty.Novice(score);
-		score = newdifficulty.Intermediate(score);
-		score = newdifficulty.Expert(score);
+		RandomQuestions newQ = new RandomQuestions();
+		score =newQ.printQuestions(0);
 
 		UIHelper.printScore(score);
 		UIHelper.printStats(username1);

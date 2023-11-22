@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class UIHelper {
 	private String line = "---------------------------------------------------------------------------------------------------------\n";
 	private String doubleLine = "=========================================================================================================\n";
-	private String goodbye = "\n                    Thanks for playing! See you next time!!!\n\n";
+	private String goodbye = "\n                                  Thanks for playing! See you next time!!!\n\n";
 
 	public void welcome() {
 

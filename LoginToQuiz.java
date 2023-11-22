@@ -19,7 +19,7 @@ public class LoginToQuiz {
 
 		TextReader scoreReaderTest = new TextReader();
 
-		ArrayList<String> playerArray = scoreReaderTest.readCSVFile();
+		ArrayList<String> playerArray = scoreReaderTest.readResults();
 
 		ArrayList<String> playerNames = new ArrayList<String>();
 
