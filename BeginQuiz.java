@@ -3,23 +3,25 @@ package MiniProject;
 import java.util.Scanner;
 
 public class BeginQuiz {
-	public void BeginTheQuiz() {
-		UIHelper newUI = new UIHelper();
-		newUI.typingText("Are you ready to begin?: Y/N\n", 5);
-		Scanner scanner = new Scanner(System.in);
-		String begin = scanner.nextLine();
+    private static final String YES = "y";
+    private static final String NO = "n";
 
-		begin = begin.toLowerCase();
-		if (begin.equals("y")) {
+    public void beginTheQuiz() {
+        UIHelper newUI = new UIHelper();
+        newUI.typingText("Are you ready to begin?: Y/N\n", 5);
 
-		} else if (begin.equals("n")) {
+        Scanner scanner = new Scanner(System.in);
+            String begin = scanner.nextLine().toLowerCase();
 
-			newUI.typingText("okay see you next time!\n", 5);
-			System.exit(0);
-		} else {
-			newUI.typingText("Invalid input\n", 5);
-			System.exit(0);
-		}
-	}
-
+            if (begin.equals(YES)) {
+                // Continue with the quiz
+            } else if (begin.equals(NO)) {
+                newUI.typingText("Okay, see you next time!\n", 5);
+              
+            } else {
+                newUI.typingText("Invalid input\n", 5);
+                
+            }
+        
+    }
 }
