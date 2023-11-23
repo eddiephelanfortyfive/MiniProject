@@ -7,8 +7,8 @@ public class MainQuiz {
 		UIHelper UIHelper = new UIHelper();
 		UIHelper.welcome();
 
-		LoginToQuiz username = new LoginToQuiz();
-		String username1 = username.LoginToTheQuiz();
+		LoginToQuiz newUser = new LoginToQuiz();
+		String username = newUser.LoginToTheQuiz();
 
 		BeginQuiz newBegin = new BeginQuiz();
 		newBegin.BeginTheQuiz();
@@ -17,7 +17,7 @@ public class MainQuiz {
 		score =newQ.printQuestions(score,Difficulty.NOVICE,Difficulty.INTERMEDIATE,Difficulty.EXPERT);
 
 		UIHelper.printScore(score);
-		UIHelper.printStats(username1,score);
+		UIHelper.printStats(username,score);
 
 	}
 
