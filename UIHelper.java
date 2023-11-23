@@ -6,7 +6,7 @@ public class UIHelper {
 	private String line = "---------------------------------------------------------------------------------------------------------\n";
 	private String doubleLine = "=========================================================================================================\n";
 	private String goodbye = "\n                                  Thanks for playing! See you next time!!!\n\n";
-
+	private static final String ALL_PLAYERS_STATISTICS = "all";
 	public void welcome() {
 
 		String welcome = """
@@ -56,7 +56,7 @@ public class UIHelper {
 		StatsForMaths getStats = new StatsForMaths();
 
 		ArrayList<Double> currentPlayer = getStats.getPlayerStats(username1);
-		ArrayList<Double> allPlayers = getStats.getPlayerStats("all");
+		ArrayList<Double> allPlayers = getStats.getPlayerStats(ALL_PLAYERS_STATISTICS);
 		ArrayList<String> comparisons = getStats.compareStats(currentPlayer, allPlayers);
 
 		typingText(line, 7);

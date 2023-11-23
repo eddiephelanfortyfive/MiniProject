@@ -4,32 +4,34 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class RandomQuestions {
+	private static final int QUESTIONS_PER_ROUND = 2;
+    private static final int MAXIMUM_QUESTIONS = 5;
+
 	public int RondomiseQuesionts(int score,Difficulty diff, String level, ArrayList<Question> Questions) {
 		String roundNum = "---------------------------------------------------------------------------------------------------------\n"
-				+ "                                          ROUND " + level + " LEVEL: " + diff + "\n"
-				+ "---------------------------------------------------------------------------------------------------------\n";
-		UIHelper newRound = new UIHelper();
-		newRound.typingText(roundNum, 7);
-		Random rand = new Random();
-		int prevnum = 0;
-		for (int j = 0; j < 1; j++) {
-			int maximum = 5;
-			for (int i = 0; i < 2; i++) {
-				int questionNumber = rand.nextInt(maximum);
-				Question Q = Questions.get(questionNumber);
-				if (prevnum != questionNumber) {
-					printQuestionNumber(i + 1);
-					questionMaker maker = new questionMaker((Q).getDifficulty(), (Q).getCategory(), (Q).getQuestion(),
-							(Q).getOptiona(), (Q).getOptionb(), (Q).getOptionc(), (Q).getOptiond(), (Q).getAnswer());
-					score = maker.makeQuestion(score);
-				} else {
-					i--;
-				}
-				prevnum = questionNumber;
-			}
+                + "                                             "+diff + "  LEVEL\n"
+                + "---------------------------------------------------------------------------------------------------------\n";
+        UIHelper newRound = new UIHelper();
+        newRound.typingText(roundNum, 7);
+        Random rand = new Random();
+        int prevNum = -1;
 
-		}
-		return score;
+        for (int i = 0; i < QUESTIONS_PER_ROUND; i++) {
+            int questionNumber;
+            do {
+                questionNumber = rand.nextInt(MAXIMUM_QUESTIONS);
+            } while (questionNumber == prevNum);
+
+            Question q = Questions.get(questionNumber);
+            printQuestionNumber(i + 1);
+            questionMaker maker = new questionMaker(q.getDifficulty(), q.getCategory(), q.getQuestion(),
+                    q.getOptiona(), q.getOptionb(), q.getOptionc(), q.getOptiond(), q.getAnswer());
+            score = maker.makeQuestion(score);
+
+            prevNum = questionNumber;
+        }
+
+        return score;
 	}
 
 	public void printQuestionNumber(int i) {

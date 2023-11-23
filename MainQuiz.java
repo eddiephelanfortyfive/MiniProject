@@ -11,7 +11,7 @@ public class MainQuiz {
 		String username = newUser.loginToTheQuiz();
 
 		BeginQuiz newBegin = new BeginQuiz();
-		newBegin.BeginTheQuiz();
+		newBegin.beginTheQuiz();
 
 		RandomQuestions newQ = new RandomQuestions();
 		score =newQ.printQuestions(score,Difficulty.NOVICE,Difficulty.INTERMEDIATE,Difficulty.EXPERT);

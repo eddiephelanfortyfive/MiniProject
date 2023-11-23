@@ -39,7 +39,7 @@ public class LoginToQuiz {
 
                 playerNames.add(username);
             } catch (IOException e) {
-                e.printStackTrace(); // Consider logging or providing a user-friendly message
+                e.printStackTrace(); 
             }
 
             return username;

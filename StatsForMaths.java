@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class StatsForMaths {
+	private static final String ALL_PLAYERS_STATISTICS = "all";
 	public ArrayList<Double> getPlayerStats(String username) {
 
 		TextReader csvFileRead = new TextReader();
@@ -20,7 +21,7 @@ public class StatsForMaths {
 
 			double scoreAsDouble = Double.parseDouble(values[1]);
 
-			if (username.equals("all")) {
+			if (username.equals(ALL_PLAYERS_STATISTICS )) {
 				points.add(scoreAsDouble);
 			} else if (username.equals(values[0])) {
 				points.add(scoreAsDouble);

@@ -7,12 +7,12 @@ import java.io.IOException;
 public class TextWriter {
 
 	private BufferedWriter writer;
-
+	private static final String RESULTS_FILE_PATH = "results.csv";
 	public void WriteScore(String username, int score) {
 
 		try {
 
-			writer = new BufferedWriter(new FileWriter("results.csv", true));
+			writer = new BufferedWriter(new FileWriter(RESULTS_FILE_PATH, true));
 
 			String[] data = { username, Integer.toString(score) };
 			String dataLine = String.join(",", data);

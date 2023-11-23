@@ -1,57 +1,46 @@
 package MiniProject;
-
-import java.io.FileReader;
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class TextReader {
 
-	private BufferedReader reader;
+    private static final String RESULTS_FILE_PATH = "results.csv";
+    private static final String QUESTIONS_FILE_PATH = "QuestionBank.csv";
 
-	public ArrayList<String> readResults() {
+    public ArrayList<String> readResults() {
+        ArrayList<String> quizResults = new ArrayList<>();
 
-		ArrayList<String> playerHistory = new ArrayList<String>();
+        try (BufferedReader resultReader = new BufferedReader(new FileReader(RESULTS_FILE_PATH))) {
+            String line;
 
-		try {
+            while ((line = resultReader.readLine()) != null) {
+                String[] values = line.split(",");
+                quizResults.add(values[0] + "," + values[1]);
+            }
+        } catch (IOException e) {
+            e.printStackTrace(); 
+        }
 
-			reader = new BufferedReader(new FileReader("results.csv"));
+        return quizResults;
+    }
 
-			String line;
+    public ArrayList<Question> readQuestions() {
+        ArrayList<Question> questions = new ArrayList<>();
 
-			while ((line = reader.readLine()) != null) {
+        try (BufferedReader questionReader = new BufferedReader(new FileReader(QUESTIONS_FILE_PATH))) {
+            String line;
 
-				String[] values = line.split(",");
+            while ((line = questionReader.readLine()) != null) {
+                String[] values = line.split(",");
+                questions.add(new Question(values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7]));
+            }
+        } catch (IOException e) {
+            e.printStackTrace(); 
+        }
 
-				playerHistory.add(values[0] + "," + values[1]);
-
-			}
-			reader.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return playerHistory;
-	}
-
-	public ArrayList<Question> readQuestions() {
-		BufferedReader reader;
-		ArrayList<Question> Questions = new ArrayList<Question>();
-
-		try {
-			reader = new BufferedReader(new FileReader("QuestionBank.csv"));
-
-			String line;
-
-			while ((line = reader.readLine()) != null) {
-				String[] values = line.split(",");
-
-				Questions.add(new Question(values[0], values[1], values[2], values[3], values[4], values[5], values[6],
-						values[7]));
-			}
-			reader.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return Questions;
-	}
+        return questions;
+    }
 }
+
