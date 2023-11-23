@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class RandomQuestions {
-	public int RondomiseQuesionts(int score, String difficulty, String level, ArrayList<Question> Questions) {
+	public int RondomiseQuesionts(int score,Difficulty diff, String level, ArrayList<Question> Questions) {
 		String roundNum = "---------------------------------------------------------------------------------------------------------\n"
-				+ "                                          ROUND " + level + " LEVEL: " + difficulty + "\n"
+				+ "                                          ROUND " + level + " LEVEL: " + diff + "\n"
 				+ "---------------------------------------------------------------------------------------------------------\n";
 		UIHelper newRound = new UIHelper();
 		newRound.typingText(roundNum, 7);
@@ -38,14 +38,14 @@ public class RandomQuestions {
 		newnumber.typingText(qNum, 5);
 	}
 
-	public int printQuestions(int score,String one, String two, String three) {
+	public int printQuestions(int score, Difficulty novice, Difficulty intermediate, Difficulty expert) {
 		TextReader readQuestions = new TextReader();
 		ArrayList<Question> Questions = readQuestions.readQuestions();
 		RandomQuestions newQ = new RandomQuestions();
 		SplitArrays newArray = new SplitArrays();
-		score = newQ.RondomiseQuesionts(score, one, "ONE", newArray.SplitedArray(Questions, one));
-		score = newQ.RondomiseQuesionts(score, two, "TWO", newArray.SplitedArray(Questions, two));
-		score = newQ.RondomiseQuesionts(score, three, "THREE", newArray.SplitedArray(Questions, three));
+		score = newQ.RondomiseQuesionts(score, novice, "ONE", newArray.SplitedArray(Questions, novice));
+		score = newQ.RondomiseQuesionts(score, intermediate, "TWO", newArray.SplitedArray(Questions, intermediate));
+		score = newQ.RondomiseQuesionts(score, expert, "THREE", newArray.SplitedArray(Questions, expert));
 		return score;
 	}
 
