@@ -8,7 +8,7 @@ public class MainQuiz {
 		UIHelper.welcome();
 
 		LoginToQuiz newUser = new LoginToQuiz();
-		String username = newUser.LoginToTheQuiz();
+		String username = newUser.loginToTheQuiz();
 
 		BeginQuiz newBegin = new BeginQuiz();
 		newBegin.BeginTheQuiz();

@@ -6,52 +6,43 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LoginToQuiz {
+    private static final String RESULTS_FILE_NAME = "results.csv";
 
-	public String LoginToTheQuiz() {
-		UIHelper newUI = new UIHelper();
+    public String loginToTheQuiz() {
+        UIHelper newUI = new UIHelper();
 
-		Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+            newUI.typingText("Please enter your username: \n", 10);
+            String username = scanner.nextLine();
 
-		newUI.typingText("Please enter your username: \n", 10);
-		String username = scanner.nextLine();
+            File resultsFile = new File(RESULTS_FILE_NAME);
 
-		File resultsFile = new File("results.csv");
+            TextReader scoreReaderTest = new TextReader();
+            ArrayList<String> playerArray = scoreReaderTest.readResults();
+            ArrayList<String> playerNames = new ArrayList<>();
 
-		TextReader scoreReaderTest = new TextReader();
+            try {
+                if (!resultsFile.exists()) {
+                    resultsFile.createNewFile();
+                }
 
-		ArrayList<String> playerArray = scoreReaderTest.readResults();
+                for (String playerInfo : playerArray) {
+                    String[] values = playerInfo.split(",");
+                    playerNames.add(values[0]);
+                }
 
-		ArrayList<String> playerNames = new ArrayList<String>();
+                if (playerNames.contains(username)) {
+                    newUI.typingText("Welcome Back " + username + " you have logged in.\n", 10);
+                } else {
+                    newUI.typingText("Welcome " + username + " you have created a new account.\n", 10);
+                }
 
-		try {
+                playerNames.add(username);
+            } catch (IOException e) {
+                e.printStackTrace(); // Consider logging or providing a user-friendly message
+            }
 
-			if (!resultsFile.exists()) {
-
-				resultsFile.createNewFile();
-
-			}
-
-			for (int i = 0; i < playerArray.size(); i++) {
-
-				String[] values = playerArray.get(i).split(",");
-
-				playerNames.add(values[0]);
-
-			}
-
-			if (playerNames.contains(username)) {
-				newUI.typingText("Welcome Back " + username + " you have logged in.\n", 10);
-			} else {
-				newUI.typingText("Welcome " + username + " you have created a new account.\n", 10);
-			}
-
-			playerNames.add(username);
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		return username;
-	}
-
+            return username;
+        
+    }
 }
