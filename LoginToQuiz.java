@@ -6,43 +6,41 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LoginToQuiz {
-    private static final String RESULTS_FILE_NAME = "results.csv";
 
-    public String loginToTheQuiz() {
-        UIHelper newUI = new UIHelper();
+	public String loginToTheQuiz() {
+		UIHelper newUI = new UIHelper();
 
-        Scanner scanner = new Scanner(System.in);
-            newUI.typingText("Please enter your username: \n", 10);
-            String username = scanner.nextLine();
+		Scanner scanner = new Scanner(System.in);
+		newUI.typingText("Please enter your username: \n", 10);
+		String username = scanner.nextLine();
 
-            File resultsFile = new File(RESULTS_FILE_NAME);
+		TextHandler scoreReaderTest = new TextHandler();
+		File resultsFile = scoreReaderTest.ReturnFile();
+		ArrayList<String> playerArray = scoreReaderTest.readResults();
+		ArrayList<String> playerNames = new ArrayList<>();
 
-            TextHandler scoreReaderTest = new TextHandler();
-            ArrayList<String> playerArray = scoreReaderTest.readResults();
-            ArrayList<String> playerNames = new ArrayList<>();
+		try {
+			if (!resultsFile.exists()) {
+				resultsFile.createNewFile();
+			}
 
-            try {
-                if (!resultsFile.exists()) {
-                    resultsFile.createNewFile();
-                }
+			for (String playerInfo : playerArray) {
+				String[] values = playerInfo.split(",");
+				playerNames.add(values[0]);
+			}
 
-                for (String playerInfo : playerArray) {
-                    String[] values = playerInfo.split(",");
-                    playerNames.add(values[0]);
-                }
+			if (playerNames.contains(username)) {
+				newUI.typingText("Welcome Back " + username + " you have logged in.\n", 10);
+			} else {
+				newUI.typingText("Welcome " + username + " you have created a new account.\n", 10);
+			}
 
-                if (playerNames.contains(username)) {
-                    newUI.typingText("Welcome Back " + username + " you have logged in.\n", 10);
-                } else {
-                    newUI.typingText("Welcome " + username + " you have created a new account.\n", 10);
-                }
+			playerNames.add(username);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
-                playerNames.add(username);
-            } catch (IOException e) {
-                e.printStackTrace(); 
-            }
+		return username;
 
-            return username;
-        
-    }
+	}
 }
