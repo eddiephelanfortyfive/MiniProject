@@ -10,7 +10,7 @@ public class LoginToQuiz {
 	public String loginToTheQuiz(Scanner scanner) {
 		UIHelper newUI = new UIHelper();
 
-		newUI.typingText("Please enter your username: \n", 10);
+		newUI.typingText("Please enter your username: \n", newUI.GetTEXT_SLEEP_SLOW());
 		String username = scanner.nextLine();
 
 		TextHandler scoreReaderTest = new TextHandler();
