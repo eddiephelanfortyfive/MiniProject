@@ -6,11 +6,10 @@ public class BeginQuiz {
     private static final String YES = "y";
     private static final String NO = "n";
 
-    public void beginTheQuiz() {
+    public void beginTheQuiz(Scanner scanner) {
         UIHelper newUI = new UIHelper();
         newUI.typingText("Are you ready to begin?: Y/N\n", 5);
 
-        Scanner scanner = new Scanner(System.in);
             String begin = scanner.nextLine().toLowerCase();
 
             if (begin.equals(YES)) {

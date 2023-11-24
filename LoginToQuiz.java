@@ -7,10 +7,9 @@ import java.util.Scanner;
 
 public class LoginToQuiz {
 
-	public String loginToTheQuiz() {
+	public String loginToTheQuiz(Scanner scanner) {
 		UIHelper newUI = new UIHelper();
 
-		Scanner scanner = new Scanner(System.in);
 		newUI.typingText("Please enter your username: \n", 10);
 		String username = scanner.nextLine();
 

@@ -2,12 +2,13 @@ package MiniProject;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class RandomQuestions {
 	private static final int QUESTIONS_PER_ROUND = 2;
     private static final int MAXIMUM_QUESTIONS = 5;
 
-	public int RondomiseQuesionts(int score,Difficulty diff, String level, ArrayList<Question> Questions) {
+	public int RondomiseQuesionts(int score,Difficulty diff, String level, ArrayList<Question> Questions, Scanner scanner) {
 		String roundNum = "---------------------------------------------------------------------------------------------------------\n"
                 + "                                             "+diff + "  LEVEL\n"
                 + "---------------------------------------------------------------------------------------------------------\n";
@@ -26,7 +27,7 @@ public class RandomQuestions {
             printQuestionNumber(i + 1);
             questionMaker maker = new questionMaker(q.getDifficulty(), q.getCategory(), q.getQuestion(),
                     q.getOptiona(), q.getOptionb(), q.getOptionc(), q.getOptiond(), q.getAnswer());
-            score = maker.makeQuestion(score);
+            score = maker.makeQuestion(score,scanner);
 
             prevNum = questionNumber;
         }
@@ -40,14 +41,14 @@ public class RandomQuestions {
 		newnumber.typingText(qNum, 5);
 	}
 
-	public int printQuestions(int score, Difficulty novice, Difficulty intermediate, Difficulty expert) {
+	public int printQuestions(int score, Difficulty novice, Difficulty intermediate, Difficulty expert, Scanner scanner) {
 		TextHandler readQuestions = new TextHandler();
 		ArrayList<Question> Questions = readQuestions.readQuestions();
 		RandomQuestions newQ = new RandomQuestions();
 		SplitArrays newArray = new SplitArrays();
-		score = newQ.RondomiseQuesionts(score, novice, "ONE", newArray.SplitedArray(Questions, novice));
-		score = newQ.RondomiseQuesionts(score, intermediate, "TWO", newArray.SplitedArray(Questions, intermediate));
-		score = newQ.RondomiseQuesionts(score, expert, "THREE", newArray.SplitedArray(Questions, expert));
+		score = newQ.RondomiseQuesionts(score, novice, "ONE", newArray.SplitedArray(Questions, novice),scanner);
+		score = newQ.RondomiseQuesionts(score, intermediate, "TWO", newArray.SplitedArray(Questions, intermediate),scanner);
+		score = newQ.RondomiseQuesionts(score, expert, "THREE", newArray.SplitedArray(Questions, expert),scanner);
 		return score;
 	}
 

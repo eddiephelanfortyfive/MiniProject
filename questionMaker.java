@@ -24,13 +24,13 @@ public class questionMaker {
 		this.qanswer = qanswer;
 	}
 
-	public int makeQuestion(int score) {
+	public int makeQuestion(int score,Scanner answer) {
 		UIHelper newUI = new UIHelper();
 		String questionnew = "CATEGORY: " + category + " \n" + "" + question + "\n" + "\n" + "	A. " + optiona + "\n"
 				+ "	B. " + optionb + "\n" + "	C. " + optionc + "\n" + "	D. " + optiond + "\n" + "\nEnter answer:\n";
 		newUI.typingText(questionnew, 5);
 		for (int i = 0; i < 1; i++) {
-			Scanner answer = new Scanner(System.in);
+
 			String input = answer.nextLine();
 			input = input.toLowerCase();
 			if (input.equals("a") || input.equals("b") || input.equals("c") || input.equals("d")) {

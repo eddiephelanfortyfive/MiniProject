@@ -88,4 +88,5 @@ public class UIHelper {
 		System.out.println("Your final score is: " + score);
 
 	}
+	
 }
