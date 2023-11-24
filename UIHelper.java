@@ -51,7 +51,7 @@ public class UIHelper {
 	}
 
 	public void printStats(String username1, int score) {
-		TextWriter scoreWriter = new TextWriter();
+		TextHandler scoreWriter = new TextHandler();
 		scoreWriter.WriteScore(username1, score);
 		StatsForMaths getStats = new StatsForMaths();
 

@@ -1,14 +1,16 @@
 package MiniProject;
+
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class TextReader {
-
-    private static final String RESULTS_FILE_PATH = "results.csv";
+public class TextHandler {
+	private BufferedWriter writer;
+	private static final String RESULTS_FILE_PATH = "results.csv";
     private static final String QUESTIONS_FILE_PATH = "QuestionBank.csv";
-
     public ArrayList<String> readResults() {
         ArrayList<String> quizResults = new ArrayList<>();
 
@@ -42,5 +44,23 @@ public class TextReader {
 
         return questions;
     }
-}
+    public void WriteScore(String username, int score) {
 
+		try {
+
+			writer = new BufferedWriter(new FileWriter(RESULTS_FILE_PATH, true));
+
+			String[] data = { username, Integer.toString(score) };
+			String dataLine = String.join(",", data);
+			writer.write(dataLine);
+			writer.newLine();
+
+			writer.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

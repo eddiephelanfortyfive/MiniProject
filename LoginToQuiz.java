@@ -17,7 +17,7 @@ public class LoginToQuiz {
 
             File resultsFile = new File(RESULTS_FILE_NAME);
 
-            TextReader scoreReaderTest = new TextReader();
+            TextHandler scoreReaderTest = new TextHandler();
             ArrayList<String> playerArray = scoreReaderTest.readResults();
             ArrayList<String> playerNames = new ArrayList<>();
 

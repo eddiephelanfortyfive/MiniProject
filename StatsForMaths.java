@@ -7,7 +7,7 @@ public class StatsForMaths {
 	private static final String ALL_PLAYERS_STATISTICS = "all";
 	public ArrayList<Double> getPlayerStats(String username) {
 
-		TextReader csvFileRead = new TextReader();
+		TextHandler csvFileRead = new TextHandler();
 
 		ArrayList<String> listOfAllQuizEntries = csvFileRead.readResults();
 

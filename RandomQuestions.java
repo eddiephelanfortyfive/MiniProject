@@ -41,7 +41,7 @@ public class RandomQuestions {
 	}
 
 	public int printQuestions(int score, Difficulty novice, Difficulty intermediate, Difficulty expert) {
-		TextReader readQuestions = new TextReader();
+		TextHandler readQuestions = new TextHandler();
 		ArrayList<Question> Questions = readQuestions.readQuestions();
 		RandomQuestions newQ = new RandomQuestions();
 		SplitArrays newArray = new SplitArrays();
