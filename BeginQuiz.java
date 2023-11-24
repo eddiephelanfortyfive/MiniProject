@@ -8,17 +8,17 @@ public class BeginQuiz {
 
     public void beginTheQuiz(Scanner scanner) {
         UIHelper newUI = new UIHelper();
-        newUI.typingText("Are you ready to begin?: Y/N\n", 5);
+        newUI.typingText("Are you ready to begin?: Y/N\n",newUI.GetTEXT_SLEEP_MEDIUM_FAST() );
 
             String begin = scanner.nextLine().toLowerCase();
 
             if (begin.equals(YES)) {
                 // Continue with the quiz
             } else if (begin.equals(NO)) {
-                newUI.typingText("Okay, see you next time!\n", 5);
+                newUI.typingText("Okay, see you next time!\n",newUI.GetTEXT_SLEEP_MEDIUM_FAST()  );
               
             } else {
-                newUI.typingText("Invalid input\n", 5);
+                newUI.typingText("Invalid input\n",newUI.GetTEXT_SLEEP_MEDIUM_FAST()  );
                 
             }
         

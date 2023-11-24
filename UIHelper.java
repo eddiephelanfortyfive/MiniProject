@@ -7,6 +7,10 @@ public class UIHelper {
 	private String doubleLine = "=========================================================================================================\n";
 	private String goodbye = "\n                                  Thanks for playing! See you next time!!!\n\n";
 	private static final String ALL_PLAYERS_STATISTICS = "all";
+	private static final int TEXT_SLEEP_FAST = 3;
+	private static final int TEXT_SLEEP_MEDIUM_FAST = 5;
+	private static final int TEXT_SLEEP_MEDIUM_SLOW = 7;
+	private static final int TEXT_SLEEP_SLOW = 10;
 	public void welcome() {
 
 		String welcome = """
@@ -35,7 +39,7 @@ public class UIHelper {
 
 				""";
 
-		typingText(welcome, 3);
+		typingText(welcome, TEXT_SLEEP_FAST);
 
 	}
 
@@ -59,34 +63,50 @@ public class UIHelper {
 		ArrayList<Double> allPlayers = getStats.getPlayerStats(ALL_PLAYERS_STATISTICS);
 		ArrayList<String> comparisons = getStats.compareStats(currentPlayer, allPlayers);
 
-		typingText(line, 7);
+		typingText(line, TEXT_SLEEP_MEDIUM_SLOW);
 		System.out.printf(
 				"                                          Your mean is %.2f\n"
 						+ "                                         Your median is %.2f\n"
 						+ "                                   Your standard deviation is %.2f\n",
 				currentPlayer.get(0), currentPlayer.get(1), currentPlayer.get(2));
-		typingText(line, 7);
+		typingText(line, TEXT_SLEEP_MEDIUM_SLOW);
 		System.out.printf(
 				"                                       The global mean is %.2f\n"
 						+ "                                      The global median is %.2f\n"
 						+ "                                 The global standard deviation is %.2f\n",
 				allPlayers.get(0), allPlayers.get(1), allPlayers.get(2));
-		typingText(line, 7);
+		typingText(line, TEXT_SLEEP_MEDIUM_SLOW);
 		System.out.printf(
 				"                                 Your mean is %s the global mean.\n"
 						+ "                               Your median is %s the global median.\n"
 						+ "                   Your standard deviation is %s the global standard deviation.\n\n",
 				comparisons.get(0), comparisons.get(1), comparisons.get(2));
-		typingText(doubleLine, 10);
-		typingText(goodbye, 10);
-		typingText(doubleLine, 10);
+		typingText(doubleLine, TEXT_SLEEP_SLOW);
+		typingText(goodbye, TEXT_SLEEP_SLOW);
+		typingText(doubleLine, TEXT_SLEEP_SLOW);
 
 	}
 
 	public void printScore(int score) {
-		typingText(line, 5);
+		typingText(line, TEXT_SLEEP_MEDIUM_FAST);
 		System.out.println("Your final score is: " + score);
 
+	}
+	public int GetTEXT_SLEEP_FAST() {
+		return TEXT_SLEEP_FAST;
+		
+	}
+	public int GetTEXT_SLEEP_MEDIUM_FAST() {
+		return TEXT_SLEEP_MEDIUM_FAST;
+		
+	}
+	public int GetTEXT_SLEEP_MEDIUM_SLOW() {
+		return TEXT_SLEEP_MEDIUM_SLOW;
+		
+	}
+	public int GetTEXT_SLEEP_SLOW() {
+		return TEXT_SLEEP_SLOW;
+		
 	}
 	
 }

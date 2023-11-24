@@ -29,9 +29,9 @@ public class LoginToQuiz {
 			}
 
 			if (playerNames.contains(username)) {
-				newUI.typingText("Welcome Back " + username + " you have logged in.\n", 10);
+				newUI.typingText("Welcome Back " + username + " you have logged in.\n", newUI.GetTEXT_SLEEP_SLOW());
 			} else {
-				newUI.typingText("Welcome " + username + " you have created a new account.\n", 10);
+				newUI.typingText("Welcome " + username + " you have created a new account.\n", newUI.GetTEXT_SLEEP_SLOW());
 			}
 
 			playerNames.add(username);

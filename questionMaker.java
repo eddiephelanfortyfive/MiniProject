@@ -28,20 +28,20 @@ public class questionMaker {
 		UIHelper newUI = new UIHelper();
 		String questionnew = "CATEGORY: " + category + " \n" + "" + question + "\n" + "\n" + "	A. " + optiona + "\n"
 				+ "	B. " + optionb + "\n" + "	C. " + optionc + "\n" + "	D. " + optiond + "\n" + "\nEnter answer:\n";
-		newUI.typingText(questionnew, 5);
+		newUI.typingText(questionnew, newUI.GetTEXT_SLEEP_MEDIUM_FAST());
 		for (int i = 0; i < 1; i++) {
 
 			String input = answer.nextLine();
 			input = input.toLowerCase();
 			if (input.equals("a") || input.equals("b") || input.equals("c") || input.equals("d")) {
 				if (input.equals(qanswer)) {
-					newUI.typingText("--Correct--\n\n", 5);
+					newUI.typingText("--Correct--\n\n", newUI.GetTEXT_SLEEP_MEDIUM_FAST());
 					score++;
 				} else {
-					newUI.typingText("--Incorrect--\n\n", 5);
+					newUI.typingText("--Incorrect--\n\n", newUI.GetTEXT_SLEEP_MEDIUM_FAST());
 				}
 			} else {
-				newUI.typingText("Invalid input please try again.\n" + "Enter answer:\n", 10);
+				newUI.typingText("Invalid input please try again.\n" + "Enter answer:\n", newUI.GetTEXT_SLEEP_SLOW());
 				i--;
 			}
 		}

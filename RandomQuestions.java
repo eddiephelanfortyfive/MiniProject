@@ -8,12 +8,12 @@ public class RandomQuestions {
 	private static final int QUESTIONS_PER_ROUND = 2;
     private static final int MAXIMUM_QUESTIONS = 5;
 
-	public int RondomiseQuesionts(int score,Difficulty diff, String level, ArrayList<Question> Questions, Scanner scanner) {
+	public int RondomiseQuesionts(int score,Difficulty diff, ArrayList<Question> Questions, Scanner scanner) {
 		String roundNum = "---------------------------------------------------------------------------------------------------------\n"
                 + "                                             "+diff + "  LEVEL\n"
                 + "---------------------------------------------------------------------------------------------------------\n";
         UIHelper newRound = new UIHelper();
-        newRound.typingText(roundNum, 7);
+        newRound.typingText(roundNum, newRound.GetTEXT_SLEEP_MEDIUM_SLOW());
         Random rand = new Random();
         int prevNum = -1;
 
@@ -38,7 +38,7 @@ public class RandomQuestions {
 	public void printQuestionNumber(int i) {
 		String qNum = "--Question " + i + "--\n";
 		UIHelper newnumber = new UIHelper();
-		newnumber.typingText(qNum, 5);
+		newnumber.typingText(qNum, newnumber.GetTEXT_SLEEP_MEDIUM_FAST());
 	}
 
 	public int printQuestions(int score, Difficulty novice, Difficulty intermediate, Difficulty expert, Scanner scanner) {
@@ -46,9 +46,9 @@ public class RandomQuestions {
 		ArrayList<Question> Questions = readQuestions.readQuestions();
 		RandomQuestions newQ = new RandomQuestions();
 		SplitArrays newArray = new SplitArrays();
-		score = newQ.RondomiseQuesionts(score, novice, "ONE", newArray.SplitedArray(Questions, novice),scanner);
-		score = newQ.RondomiseQuesionts(score, intermediate, "TWO", newArray.SplitedArray(Questions, intermediate),scanner);
-		score = newQ.RondomiseQuesionts(score, expert, "THREE", newArray.SplitedArray(Questions, expert),scanner);
+		score = newQ.RondomiseQuesionts(score, novice, newArray.SplitedArray(Questions, novice),scanner);
+		score = newQ.RondomiseQuesionts(score, intermediate, newArray.SplitedArray(Questions, intermediate),scanner);
+		score = newQ.RondomiseQuesionts(score, expert, newArray.SplitedArray(Questions, expert),scanner);
 		return score;
 	}
 
