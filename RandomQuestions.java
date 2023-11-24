@@ -41,14 +41,14 @@ public class RandomQuestions {
 		newnumber.typingText(qNum, newnumber.GetTEXT_SLEEP_MEDIUM_FAST());
 	}
 
-	public int printQuestions(int score, Difficulty novice, Difficulty intermediate, Difficulty expert, Scanner scanner) {
+	public int printQuestions(int score, Scanner scanner) {
 		TextHandler readQuestions = new TextHandler();
 		ArrayList<Question> Questions = readQuestions.readQuestions();
 		RandomQuestions newQ = new RandomQuestions();
 		SplitArrays newArray = new SplitArrays();
-		score = newQ.RondomiseQuesionts(score, novice, newArray.SplitedArray(Questions, novice),scanner);
-		score = newQ.RondomiseQuesionts(score, intermediate, newArray.SplitedArray(Questions, intermediate),scanner);
-		score = newQ.RondomiseQuesionts(score, expert, newArray.SplitedArray(Questions, expert),scanner);
+		score = newQ.RondomiseQuesionts(score, Difficulty.NOVICE, newArray.SplitedArray(Questions, Difficulty.NOVICE),scanner);
+		score = newQ.RondomiseQuesionts(score, Difficulty.INTERMEDIATE, newArray.SplitedArray(Questions, Difficulty.INTERMEDIATE),scanner);
+		score = newQ.RondomiseQuesionts(score, Difficulty.EXPERT, newArray.SplitedArray(Questions, Difficulty.EXPERT),scanner);
 		return score;
 	}
 
