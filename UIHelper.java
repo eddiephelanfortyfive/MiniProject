@@ -7,6 +7,7 @@ public class UIHelper {
 	private String doubleLine = "=========================================================================================================\n";
 	private String goodbye = "\n                                  Thanks for playing! See you next time!!!\n\n";
 	private static final String ALL_PLAYERS_STATISTICS = "all";
+	//different speeds the text is typed to the screen
 	private static final int TEXT_SLEEP_FAST = 3;
 	private static final int TEXT_SLEEP_MEDIUM_FAST = 5;
 	private static final int TEXT_SLEEP_MEDIUM_SLOW = 7;
@@ -55,6 +56,7 @@ public class UIHelper {
 	}
 
 	public void printStats(String username1, int score) {
+		//print all the stats
 		TextHandler scoreWriter = new TextHandler();
 		scoreWriter.WriteScore(username1, score);
 		StatsForMaths getStats = new StatsForMaths();
@@ -92,6 +94,7 @@ public class UIHelper {
 		System.out.println("Your final score is: " + score);
 
 	}
+	//methods to call the values outside UIHelperZ
 	public int GetTEXT_SLEEP_FAST() {
 		return TEXT_SLEEP_FAST;
 		

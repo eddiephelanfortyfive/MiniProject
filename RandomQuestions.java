@@ -38,19 +38,6 @@ public class RandomQuestions {
 
 		}
 
-		/*
-		 * int prevNum = -1; for (int i = 0; i < QUESTIONS_PER_ROUND; i++) { int
-		 * questionNumber; do {questionNumber = rand.nextInt(MAXIMUM_QUESTIONS); } while
-		 * (questionNumber == prevNum);
-		 * 
-		 * Question q = Questions.get(questionNumber); printQuestionNumber(i + 1);
-		 * questionMaker maker = new questionMaker(q.getDifficulty(), q.getCategory(),
-		 * q.getQuestion(), q.getOptiona(), q.getOptionb(), q.getOptionc(),
-		 * q.getOptiond(), q.getAnswer()); score = maker.makeQuestion(score,scanner);
-		 * 
-		 * prevNum = questionNumber; }
-		 */
-
 		return score;
 	}
 

@@ -54,31 +54,5 @@ public class questionMaker {
 		return difficulty;
 	}
 
-	public String getCategory() {
-		return category;
-	}
-
-	public String getQuestion() {
-		return question;
-	}
-
-	public String getOptiona() {
-		return optiona;
-	}
-
-	public String getOptionb() {
-		return optionb;
-	}
-
-	public String getOptionc() {
-		return optionc;
-	}
-
-	public String getOptiond() {
-		return optiond;
-	}
-
-	public String getAnswer() {
-		return qanswer;
-	}
+	
 }
